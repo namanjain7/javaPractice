@@ -167,18 +167,17 @@ public class main {
             System.out.println(String.format("The capital of the country %s is: %s", i, capitalCities.get(i)));
          */
 
-        graph<Integer> a = new graph<Integer>();
-        a.insert_edge(0, 1, false);
-        a.insert_edge(0, 4, false);
-        a.insert_edge(4, 3, false);
-        a.insert_edge(4, 1, true);
-        a.insert_edge(1, 3, true);
-        a.insert_edge(1, 2, true);
-        a.insert_edge(3, 2, true);
-        System.out.println(String.format("Number of edges is %d", a.get_edge_count()));
-        System.out.println(String.format("Number of nodes is %d", a.get_node_count()));
-        System.out.println(a.adjecencyList());
-    }
+        graphRobust a = new graphRobust();
+        a.addEdge(0, 1);
+        a.addEdge(0, 2);
+        a.addEdge(2, 3);
+        a.addEdge(3, 1);
+        a.addEdge(1, 4);
+        a.addEdge(3, 4);
+        a.addNode(7);
+        System.out.println(a.hasPathDFS(3, 0));
+        System.out.println(a.hasPathBFS(3, 0));
+      }
 }
 
 

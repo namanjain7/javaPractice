@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class random_functions {
 
     private boolean checkBST(binarySearchTree root, int min, int max){
@@ -20,7 +22,9 @@ class user{
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public void setFirstName(String firstName) { this.firstName = firstName;}
-    public void setLastName(String lastName) { this.lastName = lastName;}
+    public void setLastName(String lastName) {
+        this.lastName = lastName.trim();
+    }
     public void print(){
         System.out.println(String.format("First Name is: %s and Last Name is: %s", firstName, lastName));
     }

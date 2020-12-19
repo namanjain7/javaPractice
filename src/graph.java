@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Stack;
+import java.util.HashSet;
 
 public class graph<T> {
 
@@ -46,4 +47,75 @@ public class graph<T> {
     }
 
 
+}
+
+
+class graphRobust{
+    private HashMap<Integer, Node> nodeLookup = new HashMap<Integer, Node>();
+
+    public static class Node{
+        private int id;
+        LinkedList<Node> adjacent = new LinkedList<Node>();
+        private Node(int id) {
+            this.id = id;
+        }
+    }
+
+    private Node getNode(int id){   //if node exist, then do nothing else create new node and add node in nodeLookup
+        if(nodeLookup.containsKey(id)) return nodeLookup.get(id);
+        Node t = new Node(id);
+        nodeLookup.put(id, t);
+        return nodeLookup.get(id);
+    }
+
+    public void addNode(int id){
+        if(nodeLookup.containsKey(id)) return;
+        Node t = new Node(id);
+        nodeLookup.put(id, t);
+        return;
+    }
+
+    public void addEdge(int source, int destination){
+        Node s = getNode(source);
+        Node d = getNode(destination);
+        s.adjacent.add(d);
+    }
+
+    public boolean hasPathDFS(int source, int destination){
+        Node s = nodeLookup.get(source);
+        Node d = nodeLookup.get(destination);
+        HashSet<Integer> visited = new HashSet<Integer>();
+        return dfs(s, d, visited);
+    }
+    private boolean dfs(Node s, Node d, HashSet<Integer> visited){
+        if(visited.contains(s.id)) return false;
+        visited.add(s.id);
+        if(s == d) return true;
+        for(Node child : s.adjacent){
+            if(dfs(child, d, visited)) return true;
+        }
+        return false;
+    }
+
+    public boolean hasPathBFS(int source, int destination){
+        return hasPathBFS(getNode(source), getNode(destination));
+    }
+
+    private boolean hasPathBFS(Node source, Node destination){
+        LinkedList<Node> nextToVisit = new LinkedList<Node>();
+        LinkedList<Node> visited = new LinkedList<Node>();
+        nextToVisit.add(source);
+
+        while(!nextToVisit.isEmpty()){
+            Node node = nextToVisit.remove();
+            if(node == destination) return true;
+            if(visited.contains(node)) continue;
+            visited.add(node);
+            for(Node child: node.adjacent){
+                nextToVisit.add(child);
+            }
+        }
+
+        return false;
+    }
 }
