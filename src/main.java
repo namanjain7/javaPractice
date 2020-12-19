@@ -177,6 +177,8 @@ public class main {
         a.addNode(7);
         System.out.println(a.hasPathDFS(3, 0));
         System.out.println(a.hasPathBFS(3, 0));
+
+        String i = null;
       }
 }
 
