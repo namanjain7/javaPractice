@@ -180,6 +180,8 @@ public class main {
 
         String i = null;
          */
+        parent_overRiding a = new parent_overRiding();
+
       }
 }
 
