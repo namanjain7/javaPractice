@@ -166,7 +166,7 @@ public class main {
         for(String i : capitalCities.keySet())
             System.out.println(String.format("The capital of the country %s is: %s", i, capitalCities.get(i)));
          */
-
+        /*
         graphRobust a = new graphRobust();
         a.addEdge(0, 1);
         a.addEdge(0, 2);
@@ -179,6 +179,11 @@ public class main {
         System.out.println(a.hasPathBFS(3, 0));
 
         String i = null;
+         */
+        parent_overRiding a = new parent_overRiding();
+        a.m2();
+        child_overRiding b = new child_overRiding();
+        b.m2();
       }
 }
 
