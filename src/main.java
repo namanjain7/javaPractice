@@ -180,10 +180,6 @@ public class main {
 
         String i = null;
          */
-        parent_overRiding a = new parent_overRiding();
-        a.m2();
-        child_overRiding b = new child_overRiding();
-        b.m2();
       }
 }
 
