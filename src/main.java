@@ -180,8 +180,10 @@ public class main {
 
         String i = null;
          */
-        parent_overRiding a = new parent_overRiding();
-
+        backTracking a = new backTracking();
+        //a.swap(1, 2);
+        String b = "abc";
+        a.permuteString_naive(b, 0, b.length() - 1);
       }
 }
 
