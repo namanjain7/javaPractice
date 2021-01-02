@@ -180,10 +180,13 @@ public class main {
 
         String i = null;
          */
+        /*
         backTracking a = new backTracking();
         //a.swap(1, 2);
         String b = "abc";
         a.permuteString_naive(b, 0, b.length() - 1);
+        */
+         */
       }
 }
 
