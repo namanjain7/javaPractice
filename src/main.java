@@ -180,7 +180,15 @@ public class main {
 
         String i = null;
          */
-        parent_overRiding a = new parent_overRiding();
+        graph_advanced a = new graph_advanced();
+        a.add_edge(0, 1, false);
+        a.add_edge(0, 2, false);
+        a.add_edge(1, 3, false);
+        a.add_edge(2, 3, false);
+        a.add_edge(3, 4, false);
+        a.add_edge(3, 5, false);
+        a.print_adjacency_list();
+        a.topological_sorting();
 
       }
 }

@@ -1,11 +1,6 @@
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Stack;
-import java.util.HashSet;
+import java.util.*;
 
 public class graph<T> {
-
     private HashMap<T, LinkedList<T>> map = new HashMap<T, LinkedList<T>>();
 
     public void insert_value(T value) {
@@ -45,15 +40,13 @@ public class graph<T> {
         }
         return builder;
     }
-
-
 }
 
 
 class graphRobust{
     private HashMap<Integer, Node> nodeLookup = new HashMap<Integer, Node>();
 
-    public static class Node{
+    public class Node{
         private int id;
         LinkedList<Node> adjacent = new LinkedList<Node>();
         private Node(int id) {
