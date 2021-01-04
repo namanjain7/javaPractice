@@ -181,14 +181,14 @@ public class main {
         String i = null;
          */
         graph_advanced a = new graph_advanced();
-        a.add_edge(0, 1, false);
-        a.add_edge(0, 2, false);
-        a.add_edge(1, 3, false);
+        a.add_edge(5, 0, false);
+        a.add_edge(4, 0, false);
+        a.add_edge(5, 2, false);
+        a.add_edge(4, 1, false);
         a.add_edge(2, 3, false);
-        a.add_edge(3, 4, false);
-        a.add_edge(3, 5, false);
+        a.add_edge(3, 1, false);
         a.print_adjacency_list();
-        a.topological_sorting();
+        a.topological_sort();
 
       }
 }

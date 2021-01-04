@@ -27,33 +27,33 @@ public class graph_advanced {
         System.out.println();
     }
 
-    public void topological_sorting(){
-        int[] inDegree = new int[graph.size() + 1];
-        for(Integer i : graph.keySet()){
-            for(Integer j : graph.get(i))
+    public void topological_sort(){
+        int[] inDegree = new int[graph.size()];
+        for(LinkedList<Integer> i : graph.values()){
+            for(Integer j : i){
                 inDegree[j]++;
-        }
-
-        System.out.println();
-
-        Queue<Integer> q = new LinkedList<>();
-        for(int i : inDegree) {
-            if (i == 0)
-                q.add(i);
-        }
-        System.out.println("Topological Sorting of the graph is: ");
-        while(!q.isEmpty()){
-            Integer u = q.remove();
-            System.out.print(u + " : ");
-            for(Integer i : graph.get(u)){
-                inDegree[i]--;
-                if(inDegree[i] == 0){
-                    q.add(i);
-                }
             }
         }
+        System.out.print("InDegree of the Graph is");
+        for(int i : inDegree)
+            System.out.print( " : " + i);
         System.out.println();
 
+        Queue<Integer> q = new LinkedList<Integer>();
+        for(int i = 0; i < inDegree.length; i++){
+            if(inDegree[i] == 0)
+                q.add(i);
+        }
+        System.out.print("Topological Sorting of the graph");
+        while(!q.isEmpty()){
+            Integer u = q.remove();
+            System.out.print(" : " + u);
+            for(Integer j : graph.get(u)){
+                inDegree[j]--;
+                if(inDegree[j] == 0)
+                    q.add(j);
+            }
+        }
     }
 
 }
