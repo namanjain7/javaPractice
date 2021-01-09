@@ -7,7 +7,6 @@ public class graph_advanced {
     public void addNode(int data){
         if(!graph.containsKey(data))
             graph.put(data, new LinkedList<>());
-        return;
     }
     public void add_edge(Integer s, Integer d, boolean isBidirectional){
         if(!graph.containsKey(s)) addNode(s);
