@@ -180,20 +180,24 @@ public class main {
 
         String i = null;
          */
+/*
+        shortestPath a = new shortestPath();
+        a.addEdge(0, 1, false);
+        a.addEdge(0, 4, false);
+        a.addEdge(1, 2, false);
+        a.addEdge(4, 2, false);
+        a.addEdge(2, 3, false);
+        a.addEdge(4, 5, false);
+        a.addEdge(5, 3, false);
 
-        graph_advanced a = new graph_advanced();
-        a.add_edge(0, 1, false);
-        a.add_edge(0, 4, false);
-        a.add_edge(1, 2, false);
-        a.add_edge(4, 2, false);
-        a.add_edge(2, 3, false);
-        a.add_edge(4, 5, false);
-        a.add_edge(5, 3, false);
-
-        a.print_adjacency_list();
-        a.shortest_Path();
+        a.print_adjacencyList();
+        LinkedList<Integer> topological_sort = a.topological_sort();
+        for(int i : topological_sort){
+            System.out.println(i);
+        }
 
       }
+      */
 }
 
 

@@ -1,6 +1,5 @@
 import java.util.*;
-
-public class graph_advanced {
+class graph_advanced {
 
     HashMap<Integer, LinkedList<Integer>> graph = new HashMap<>();
 
